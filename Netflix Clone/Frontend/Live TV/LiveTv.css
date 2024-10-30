@@ -1,0 +1,695 @@
+
+body,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and border don't affect width/height */
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: black ;
+    font-family: 'Bebas Neue';
+   
+    
+  
+  }
+  
+
+  
+/*Header Start*/
+nav {
+    margin: 0;
+    padding: 10px 20px; /* Padding around the navbar */
+    width: 100vw; /* Full width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(7, 7, 7); /* Navbar background */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.8); /* Enhanced shadow for depth */
+    position: relative;
+  
+    flex-wrap: wrap;
+  }
+  
+  #navStart
+  {
+    display: flex;
+    justify-content: start;
+    gap:50px;
+    align-items: center;
+  }
+  
+  /* Logo styling with animation */
+  #navLogo {
+    font-size: 2.2rem; /* Logo size */
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    color: #e50914; /* Logo color */
+    transition: transform 0.3s ease; /* Logo hover effect */
+    opacity: 0; /* Initially invisible */
+    animation: logoFadeIn 1.5s ease forwards, logoSlideIn 1.5s ease forwards; /* Animations for logo */
+  }
+  
+  #Layer_1
+  {
+  display: none;
+  }
+  
+  /* Flex container for nav items */
+  #navMiddle {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  
+  }
+  
+  /* Nav content styles */
+  #navContent {
+    display: flex;
+    justify-content: space-evenly;
+   gap:50px;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none; /* Remove bullet points */
+  }
+  
+  /* Nav item content with hover and animation */
+  .navContents {
+    font-size: 1.2rem; /* Item font size */
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+    color: #e50914; /* Item color */
+    padding: 10px 15px; /* Add padding to create a box-like effect */
+    position: relative; /* For hover effect */
+    border-radius: 5px; /* Smooth corners */
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    animation: navItemFadeIn 1.5s ease forwards; /* Fade-in animation for nav items */
+  }
+  
+  /* Nav contents hover effect with grey background box */
+  .navContents:hover {
+    color: #f5c518; /* Gold color on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Light grey background box */
+    transform: translateY(-3px) scale(1.05); /* Lift and slightly scale up */
+  }/* Button styling */
+  .join-button {
+    background-color: #e50914; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Button font size */
+    font-weight: bold; /* Button text weight */
+    border-radius: 0px; /* Sharp corners */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    margin-right: 30px; /* Space between button and navbar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .join-button:hover {
+    background-color: #f5c518; /* Gold on hover */
+    transform: scale(1.1); /* Scale on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+  }
+  
+  .join-button:active {
+    transform: scale(0.98); /* Slightly shrink on click */
+  }
+  
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+  }
+  
+  /* Optional animation for extra effect */
+  .join-button:hover {
+    animation: glow 1.5s infinite ease-in-out;
+  }
+  
+  /* Remove blue underline for anchor tags */
+  .navContents a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    transition: color 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Hover effect for anchor tags */
+  .navContents a:hover {
+    color: #f5c518; /* Gold color on hover */
+  }
+  
+  /* Keyframes for logo fade-in and slide-in animations */
+  @keyframes logoFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes logoSlideIn {
+    0% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Keyframe for nav items fade-in animation */
+  @keyframes navItemFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  a{
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width:800px)
+   {
+    nav
+    {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #navStart
+    {
+      width:100%;
+      justify-content: space-around;
+    }
+    #Layer_1
+    {
+      display: block;
+    
+    }
+  
+    
+  
+    #navContent
+    {
+    
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin-right: 4rem;
+    }
+    #navMiddle
+    {
+      width: 100%;
+  display: none;
+    
+    }
+  
+    #navEnd
+    {
+      display: none;
+    }
+  }
+  
+  
+  
+
+ 
+  
+  /* Body Of Movies Page*/
+  
+
+
+
+
+/*1st Background Of the Movies Page*/
+* {
+  box-sizing: border-box;
+}
+
+#FirstBackground {
+  margin-top: 0;
+  width: 100%;
+
+  min-height:300px;
+  height: fit-content;
+  background-color: black;
+  position: relative;
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+#FirstBackground img {
+  width: 100%;
+  min-height:300px;
+  min-width: 350px; /* Minimum width for responsiveness */
+  height: auto;
+  opacity: 0.3;
+  display: block; /* Ensures there's no space below the image */
+}
+
+
+#FirstBackgroundText {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 5%; /* Default top position */
+  text-align: start;
+  color: white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column; /* Arrange text in a column */
+  justify-content: center; /* Center content vertically */
+  align-items: flex-start; /* Align text to start */
+  padding: 2rem;
+}
+
+.main-title {
+  font-size: 3rem; /* Base font size */
+  color: rgb(9, 255, 0);
+  margin-bottom: 1rem;
+}
+
+.sub-text {
+  font-size: 1.5rem; /* Base font size */
+  max-width: 70%;
+  line-height: 1.5;
+}
+
+.cta-button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 1rem; /* Add space above the button */
+}
+
+.cta-button:hover {
+  background-color: #ff0a16;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  #FirstBackgroundText {
+    top: 15%; /* Adjusted top position for medium screens */
+    padding: 1rem;
+  }
+
+  .main-title {
+    font-size: 2.5rem; /* Adjust font size for medium screens */
+  }
+
+  .sub-text {
+    font-size: 1.2rem; /* Adjust font size for medium screens */
+    max-width: 90%;
+  }
+
+  .cta-button {
+    font-size: 1.25rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
+
+/* Specific adjustment for 722px */
+@media screen and (max-width: 722px) {
+  #FirstBackgroundText {
+    top: 0%; /* Adjusted top position to keep text visible */
+  }
+ 
+  .main-title {
+    font-size: 2rem; /* Further reduce for small screens */
+  }
+
+  .sub-text {
+    font-size: 0.8rem; /* Further reduce for small screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #FirstBackgroundText {
+    top: 0; /* Adjusted top position for extra small screens */
+    padding: 0.5rem;
+    left: 2%;
+    right: 2%; /* Ensure the text container has some space on the right */
+  }
+
+  .main-title {
+    font-size: 1.5rem; /* Further reduce for extra small screens */
+  }
+
+  .sub-text {
+    font-size: 0.9rem; /* Further reduce for extra small screens */
+    max-width: 100%;
+    line-height: 1.4;
+  }
+
+  
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+
+
+
+  /*1st Carousal Of Movies Page*/
+
+
+  .carousal {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+    
+
+
+   
+ 
+
+  }
+  
+  .carousals {
+    position: relative;
+    width: 300px;
+    min-width: 200px;
+    height: fit-content;
+    margin-bottom: 20px; /* Add margin between carousel items */
+    transition: transform 0.3s ease-in-out;
+  }
+  .carousals img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Ensure smooth transition */
+  }
+  
+  .carousals:hover img {
+    opacity: 0.4; /* This will trigger opacity change when hovering over .carousals */
+  }
+  
+  .carousals:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover for the entire container */
+  }
+  
+  
+  .carousals:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .title {
+    font-size: 4rem; /* Adjust font size for better readability */
+    color: red;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0); /* Softer shadow for better text clarity */
+  }
+  
+  .descriptionYear {
+    font-size:2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+  }
+  
+  .descriptionGenre {
+    display: flex;
+    gap: 10px;
+    font-size: 1.4rem;
+    color: white;
+  }
+  
+  .genre {
+    background-color: rgba(15, 14, 14, 0.8); /* Slightly transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .carousalsDescription {
+    display: none; /* Hidden by default */
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    color: white;
+    width: 85%; /* Relative to the carousel item width */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .carousals:hover .carousalsDescription {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Make the description appear smoothly */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .carousals {
+      width: 250px; /* Adjust size for medium screens */
+    }
+  
+    .title {
+      font-size: 2rem; /* Reduce text size */
+    }
+  
+    .descriptionYear {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousals {
+      width: 200px; /* Further reduce size for small screens */
+    }
+  
+    .title {
+      font-size: 1.5rem; /* Adjust text size for small screens */
+    }
+  
+    .descriptionYear {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousal {
+      justify-content: center; /* Center the carousel items for small screens */
+    }
+  
+    .carousals {
+      width: 180px; /* Adjust for extra small screens */
+    }
+  
+    .title {
+      font-size: 1.3rem; /* Adjust text size for extra small screens */
+    }
+  
+    .descriptionYear {
+      font-size: 0.8rem;
+    }
+  
+    .carousalsDescription {
+      bottom: 10px; /* Adjust description position */
+      left: 5px;
+    }
+  }
+
+
+
+
+  /*Arrow Class For Carousal*/
+
+  .arrow
+  {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: absolute;
+    font-size: 15rem;
+    right:0rem;
+    top:0px;
+    opacity: 0.6;
+    color: rgb(122, 119, 119);
+
+  
+  }
+
+
+
+
+
+  /*Last Background*/
+
+  #lastBackground
+  {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    width:100%;
+    min-width:100%;
+    height:fit-content;
+    max-width: 100%;
+    min-height: 20rem;
+    position: relative;
+ max-width: 40rem;
+    min-height: 22rem;
+  }
+
+  #lastBackground img
+  {
+    width:100% ;
+    min-width:100%;
+    height:fit-content;
+    max-width: 100%;
+    min-height: 20rem;
+    opacity: 0.3;
+    max-width: 40rem;
+    min-height: 22rem;
+    
+  }
+
+  
+#lastBackgroundText {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 5%; /* Default top position */
+  text-align: start;
+  color: white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column; /* Arrange text in a column */
+  justify-content: center; /* Center content vertically */
+  align-items: flex-start; /* Align text to start */
+  padding: 2rem;
+}
+
+
+  /*Last Background End*/
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Footer Part Of The Page*/
+footer {
+    background-color: rgb(2, 2, 2);
+    color: #ccc; /* Softer grey for text */
+    padding: 50px 0;
+    font-size: 0.95rem;
+    border-top: 3px solid #e50914; /* Bold top border for visual separation */
+  }
+  
+  footer a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #e50914; /* Netflix-like red on hover */
+    transform: scale(1.1); /* Enlarge slightly for a standout effect */
+  }
+  
+  footer a:before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #e50914;
+    transition: width 0.4s ease;
+  }
+  
+  footer a:hover:before {
+    width: 100%; /* Underline effect on hover */
+  }
+  
+  footer .footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: start;
+  }
+  
+  footer table {
+    width: 100%;
+    border-spacing: 0 30px; /* Increased spacing for a cleaner layout */
+  }
+  
+  footer td {
+    padding: 15px;
+    font-weight: 600; /* Bolder text for better readability */
+  }
+  
+  footer td a {
+    font-size: 1rem;
+  }
+  
+  footer td a:hover {
+    text-shadow: 0 4px 10px rgba(229, 9, 20, 0.7); /* Stunning hover shadow effect */
+  }
+  select {
+    background-color: #0a0a0a; /* Dark background for consistency */
+    color: #b3b3b3; /* Light grey text */
+    border: 2px solid #e50914; /* Red border to match Netflix-like theme */
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 300px; /* Set a width that looks balanced */
+    border-radius: 5px; /* Slight rounding for modern look */
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  select:hover {
+    color: #e50914; /* Highlight text in red on hover */
+    border-color: #ffffff; /* Change border to white for more contrast */
+    background-color: #1c1c1c; /* Slightly lighter dark background on hover */
+  }
+  
+  select:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.7); /* Glowing red box-shadow on focus */
+  }
+  
+  option {
+    background-color: #0a0a0a; /* Keep background dark inside dropdown */
+    color: #b3b3b3; /* Text color in dropdown */
+    font-size: 1rem;
+  }
+  

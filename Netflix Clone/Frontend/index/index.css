@@ -1,0 +1,1307 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100);
+
+body,html{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding and border don't affect width/height */
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background-color: black ;
+ 
+  
+
+}
+
+
+
+#ClickSomethingText
+{
+  text-align: center;
+  font-family:"Bebas Neue";
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  transition: 5s;
+  animation: blink 3s ease-in-out infinite;
+  color: rgb(255, 67, 34);
+  font-weight: bolder;
+  text-shadow: 0.1px 0.1px 0.1px rgb(0, 0, 0);
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1;   /* Fully visible */
+  }
+
+  50% {
+    opacity: 0;   /* Fully invisible */
+  }
+ 
+  100% {
+    opacity: 1;   /* Fully visible again */
+  }
+}
+
+
+/* Basic styles for body */
+/* Container setup */
+
+#mainContainer
+{
+  display: none;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  justify-content: center;
+  align-items: center;
+  transition: 3s;
+}
+#container {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 77vh;
+margin: 0;
+background-color: black;
+overflow: hidden;
+}
+
+/* Netflix logo styling */
+.netflix-logo {
+display: flex;
+font-size: 100px;
+font-family: 'Bebas Neue', sans-serif;
+font-weight: bold;
+letter-spacing: 10px;
+color: #e50914;
+opacity: 0; /* Hidden at first */
+animation: fadeIn 3.5s ease-in-out forwards;
+transition: 3s;
+}
+
+/* Individual letter animations */
+.netflix-logo span {
+display: inline-block;
+opacity: 0;
+transform: translateY(100px);
+animation: dropIn 3.5s ease forwards;
+margin: 0 5px;
+}
+
+/* Assigning delay for each letter */
+.netflix-logo .a { animation-delay: 0.2s; }
+.netflix-logo .n { animation-delay: 0.4s; }
+.netflix-logo .i1 { animation-delay: 0.6s; }
+.netflix-logo .f { animation-delay: 0.8s; }
+.netflix-logo .l { animation-delay: 1s; }
+.netflix-logo .i2 { animation-delay: 1.2s; }
+.netflix-logo .x { animation-delay: 1.4s; }
+
+/* Keyframe for drop-in animation */
+@keyframes dropIn {
+0% {
+  opacity: 0;
+  transform: translateY(100px);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+/* Fade in the whole logo */
+@keyframes fadeIn {
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+
+
+/* DashBoard Start*/
+#Dashboard
+{
+  display: none;
+  margin:0px
+  
+}
+
+/*Header Start*/
+nav {
+  margin: 0;
+  margin-top: 0rem;
+  padding: 10px 20px; /* Padding around the navbar */
+  width: 100vw; /* Full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(7, 7, 7); /* Navbar background */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.8); /* Enhanced shadow for depth */
+  position: relative;
+
+  flex-wrap: wrap;
+}
+
+#navStart
+{
+  display: flex;
+  justify-content: start;
+  gap:50px;
+  align-items: center;
+}
+
+/* Logo styling with animation */
+#navLogo {
+  font-size: 2.2rem; /* Logo size */
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  color: #e50914; /* Logo color */
+  transition: transform 0.3s ease; /* Logo hover effect */
+  opacity: 0; /* Initially invisible */
+  animation: logoFadeIn 1.5s ease forwards, logoSlideIn 1.5s ease forwards; /* Animations for logo */
+}
+
+#Layer_1
+{
+display: none;
+}
+
+/* Flex container for nav items */
+#navMiddle {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+
+}
+
+/* Nav content styles */
+#navContent {
+  display: flex;
+  justify-content: space-evenly;
+ gap:50px;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none; /* Remove bullet points */
+}
+
+/* Nav item content with hover and animation */
+.navContents {
+  font-size: 1.2rem; /* Item font size */
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  color: #e50914; /* Item color */
+  padding: 10px 15px; /* Add padding to create a box-like effect */
+  position: relative; /* For hover effect */
+  border-radius: 5px; /* Smooth corners */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  animation: navItemFadeIn 1.5s ease forwards; /* Fade-in animation for nav items */
+}
+
+/* Nav contents hover effect with grey background box */
+.navContents:hover {
+  color: #f5c518; /* Gold color on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Light grey background box */
+  transform: translateY(-3px) scale(1.05); /* Lift and slightly scale up */
+}/* Button styling */
+.join-button {
+  background-color: #e50914; /* Button color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  padding: 10px 20px; /* Button padding */
+  font-size: 1rem; /* Button font size */
+  font-weight: bold; /* Button text weight */
+  border-radius: 0px; /* Sharp corners */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  margin-right: 30px; /* Space between button and navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.join-button:hover {
+  background-color: #f5c518; /* Gold on hover */
+  transform: scale(1.1); /* Scale on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
+}
+
+.join-button:active {
+  transform: scale(0.98); /* Slightly shrink on click */
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Optional animation for extra effect */
+.join-button:hover {
+  animation: glow 1.5s infinite ease-in-out;
+}
+
+/* Remove blue underline for anchor tags */
+.navContents a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for anchor tags */
+.navContents a:hover {
+  color: #f5c518; /* Gold color on hover */
+}
+
+/* Keyframes for logo fade-in and slide-in animations */
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logoSlideIn {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Keyframe for nav items fade-in animation */
+@keyframes navItemFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width:800px)
+ {
+  nav
+  {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #navStart
+  {
+    width:100%;
+    justify-content: space-around;
+  }
+  #Layer_1
+  {
+    display: block;
+  
+  }
+
+  
+
+  #navContent
+  {
+  
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4rem;
+  }
+  #navMiddle
+  {
+    width: 100%;
+display: none;
+  
+  }
+
+  #navEnd
+  {
+    display: none;
+  }
+}
+
+
+
+/* First Flex Box */
+/* Keyframes for fade-in and slide-up effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+@keyframes imageFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9); /* Start slightly smaller */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* End at original size */
+  }
+}
+#firstFlex {
+  animation: fadeIn 1.5s ease-in-out;
+  position: relative;
+  width: 100%;
+  font-family:"Bebas Neue" ;
+  height: 400px; /* Default height */
+  display: flex;
+  margin-top: 0rem;
+  gap:0.3rem;
+  align-items: flex-start; /* Align text to the start */
+  padding: 20px; /* Add padding for better readability */
+  overflow: hidden; /* Prevent overflow of children */
+}
+
+#firstFlex::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../Pictures/FirstFlex.jpeg'); /* Ensure the path is correct */
+  background-size: cover; /* Default: Cover the entire area */
+  background-position: center; /* Center the image */
+  opacity: 0.1; /* Set transparency for the background image */
+  z-index: 0; /* Ensure the background is below the text */
+}
+
+#firstFlexText {
+  position: relative; /* Ensure text is above the background */
+  color: white; /* Text color */
+  z-index: 1; /* Ensure text is above the background image */
+  max-width: 800px; /* Limit text width for better readability */
+  font-size: 1.5rem;
+  animation: fadeIn 2s ease-in-out;
+
+}
+#firstFlexImage img
+{
+  animation: imageFadeIn 1.8s ease-in-out;
+
+  width:37rem;
+  height:22rem
+}
+#firstFlexTitle {
+  font-size: 3rem; /* Default font size */
+  margin-bottom: 10px;
+  color: red;
+}
+
+#firstFlexContent {
+  font-size: 1em; /* Default font size */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  #firstFlex::before {
+      background-size: 90%; /* Adjust width of image for medium screens */
+  }
+
+  #firstFlex {
+      height: 350px; /* Adjust height for medium screens */
+  }
+  
+  #firstFlexTitle {
+      font-size: 1.8em; /* Adjust title size */
+  }
+
+  #firstFlexContent {
+      font-size: 0.9em; /* Adjust content size */
+  }
+}
+
+@media (max-width:1138px) {
+  #firstFlex::before {
+      background-size: 80%; /* Further adjust width for smaller screens */
+  }
+
+  #firstFlex {
+      height: 300px; /* Adjust height for smaller screens */
+  }
+  #firstFlexImage
+  {
+    display: none;
+  }
+
+  #firstFlexTitle {
+      font-size: 1.6em; /* Further adjust title size */
+  }
+
+  #firstFlexContent {
+      font-size: 0.8em; /* Further adjust content size */
+  }
+}
+
+@media (max-width: 768px) {
+  #firstFlex::before {
+      background-size: 70%; /* Adjust width for mobile screens */
+  }
+
+  #firstFlexImage
+  {
+    display: none;
+  }
+  #firstFlex {
+      height: 650px; /* Adjust height for mobile screens */
+      padding: 15px; /* Adjust padding */
+  }
+
+  #firstFlexTitle {
+      font-size: 1.5em; /* Further adjust title size */
+  }
+
+  #firstFlexContent {
+    
+      font-size: 1.2rem; /* Further adjust content size */
+  }
+}
+
+@media (max-width: 576px) {
+  #firstFlex::before {
+      background-size: 60%; /* Adjust width for extra small screens */
+  }
+
+  #firstFlex {
+      height: 400px; /* Adjust height for extra small screens */
+  }
+
+  #firstFlexTitle {
+      font-size: 1.3em; /* Further adjust title size */
+  }
+
+  #firstFlexContent {
+      font-size: 1.2rem; /* Further adjust content size */
+  }
+  .grid{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+
+/*Second Division Of Landing Page*/
+#secondFlexContainer
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+#secondFlexTitleText
+{
+  margin-top: 9rem;
+  padding: 20px;
+  font-family: 'Bebas Neue';
+  font-size: 2rem; /* Default font size */
+  margin-bottom: 10px;
+  color: rgb(255, 0, 0);
+}
+
+  /* 2nd Part Of Landing Page*/
+
+  .box {
+    background-color: #000000;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    font-family: 'Bebas Neue';
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(2, 350px);
+    justify-content: space-around;
+    grid-gap: 20px;
+  }
+  
+  /* Responsive for tablets and smaller screens */
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Responsive for mobile screens */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .grid > article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(45deg, 
+      rgba(0, 0, 0, 1) 0%,               /* Solid black */
+      rgba(5, 0, 0, 1) 10%,              /* Very dark red-black */
+      rgb(24, 15, 15) 30%,             /* Darker muted red */
+      rgb(20, 17, 17) 50%,             /* Rich dark red */
+      rgb(0, 0, 0) 70%,          /* Bright shiny red */
+      rgba(24, 20, 20, 0.8) 85%,        /* Lighter shiny red */
+      rgba(8, 7, 7, 0.6) 100%        /* Very light glossy red highlight */
+    );
+  
+    padding: 5% 0;
+    border-radius: 20px;
+  
+    /* Transition for smooth hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    /* Animation properties for shine effect */
+    background-size: 200% 200%;  /* Increased size for a more dynamic effect */
+    animation: shine 2s infinite linear;
+  }
+  
+  /* Shine animation with a dynamic shimmering effect */
+  @keyframes shine {
+    0% {
+      background-position: 100% 0; /* Start position */
+    }
+    50% {
+      background-position: 0 0;     /* Middle position for maximum shine */
+    }
+    100% {
+      background-position: 100% 0; /* Return to start position */
+    }
+  }
+  /* Hover effect for article */
+.grid > article:hover {
+  transform: translateY(-10px); /* Smooth lift on hover */
+  box-shadow: 4px 4px 15px rgba(255, 110, 110, 0.6); /* Enhanced shadow */
+}
+
+/* Text styling within the article */
+.grid .text {
+  padding: 10px 20px 20px 30px;
+  color: #ffffff; /* Softer, more readable text color */
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  opacity: 1; /* Default opacity */
+  transition: opacity 0.3s ease, text-shadow 0.3s ease; /* Added text-shadow for shimmer effect */
+}
+
+/* Hover effect for text */
+.grid > article:hover .text {
+  opacity: 1; /* Keep opacity at 1 for a more pronounced look */
+  animation: shimmer 1.5s infinite linear; /* Apply shimmering effect */
+}
+
+/* Shimmer animation for text */
+@keyframes shimmer {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 110, 110, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 110, 110, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 110, 110, 0.4);
+  }
+}
+
+  h3 {
+    font-size: 1.8rem;
+    color: #d8d5d5;
+    text-align: left;
+    letter-spacing: 0.1rem;
+    
+    /* Transition for smooth hover effect on heading */
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover effect for h3 */
+  .grid > article:hover h3 {
+    color: gold; /* Changes heading color on hover to light red */
+  }
+  
+
+
+
+  /* 3rd Division Of The Landing Page*/
+
+ 
+  #QuestionBoxIntro
+{
+  margin-top: 9rem;
+
+  font-family: 'Bebas Neue';
+  font-size: 2rem; /* Default font size */
+  margin-bottom: 10px;
+  color: rgb(255, 0, 0);
+}
+
+  
+  
+  
+  
+  #QuestionsBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: start;
+    padding: 1rem;
+    margin-top: 10rem;
+  }
+  
+  .QuestionBox {
+    padding: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-family: 'Bebas Neue';
+    background-color: rgb(49, 49, 49);
+    color: white;
+    font-weight: bolder;
+    width: 100%;
+    max-width: 95%;
+    min-width: 20rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .QuestionBox:hover{
+    transform: scale(1.02);
+    background-color: rgb(59, 59, 59);
+  }
+  
+  .Capa_1 {
+    margin-right: 10px;
+  }
+  
+  .Question {
+    display: flex;
+    padding: 0.5rem;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .Question:hover:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .QuestionText {
+    font-size: 2.3rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    transition: color 0.3s ease;
+  }
+  
+  .QuestionText:hover:active {
+    color: gold;
+  }
+  
+  .AnswerPopUp {
+    margin: 0px;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+  }
+  
+  .QuestionBox:hover .AnswerPopUp {
+    display: block;
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  
+  .hr {
+    width: 100%;
+    height: 1px;
+    display: block;
+    position: relative;
+  
+  }
+  
+  .hr:after,
+  .hr:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 50%;
+    left: 0;
+  }
+  
+  .hr:before {
+    background: linear-gradient(90deg, 0%, 50%, transparent 50%, transparent 100%);
+    background-size: 1rem;
+    background-position: center;
+    z-index: 1;
+  }
+  
+  .hr:after {
+    transition: opacity 0.3s ease, animation 0.3s ease;
+    background: linear-gradient(
+      to right, 
+      #62efab 5%, 
+      #F2EA7D 15%, 
+      #F2EA7D 25%, 
+      #FF8797 35%, 
+      #FF8797 45%, 
+      #e1a4f4 55%, 
+      #e1a4f4 65%, 
+      #82fff4 75%, 
+      #82fff4 85%, 
+      #62efab 95%
+    );
+    background-size: 200%;
+    background-position: 0%;
+    animation: bar 15s linear infinite;
+  }
+  
+  .hr.anim:before {
+    background: linear-gradient(90deg, #10111F 0%, #10111F 5%, transparent 5%, transparent 10%, #10111F 10%, #10111F 15%, transparent 15%, transparent 20%, #10111F 20%, #10111F 25%, transparent 25%, transparent 30%, #10111F 30%, #10111F 35%, transparent 35%, transparent 40%, #10111F 40%, #10111F 45%, transparent 45%, transparent 50%, #10111F 50%, #10111F 55%, transparent 55%, transparent 60%, #10111F 60%, #10111F 65%, transparent 65%, transparent 70%, #10111F 70%, #10111F 75%, transparent 75%, transparent 80%, #10111F 80%, #10111F 85%, transparent 85%, transparent 90%, #10111F 90%, #10111F 95%, transparent 95%, transparent 100%);
+    background-size: 10rem;
+    background-position: center;
+    z-index: 1;
+    animation: bar 120s linear infinite;
+  }
+  
+  .hr.anim:hover:before {
+    animation-duration: 20s;
+  }
+  
+  .hr.anim:hover:after {
+    animation-duration: 2s;
+  }
+  
+  @keyframes bar {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+  
+
+/* 4th Division */
+
+#fourthDivision {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Bebas Neue';
+  color: red;
+  animation: fadeIn 1s ease forwards; /* On-load effect */
+  padding: 1rem; /* Padding for better spacing */
+}
+
+#EmailContact {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+  text-align: center; /* Center text for better visibility */
+  animation: slideIn 0.5s ease forwards; /* Animation for text */
+}
+
+#EmailBody {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center items */
+  gap: 1rem; /* Space between input and button */
+}
+
+input[type="email"] {
+  padding: 0.8rem;
+  border: 2px solid red;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem;
+  width: 800px; /* Fixed width for desktop */
+  max-width: 100%; /* Ensure it does not exceed viewport width */
+  background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+  color: white; /* Text color */
+  transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth border color change */
+}
+
+/* Hover effect for input */
+input[type="email"]:hover {
+  border-color: #ff6347; /* Change border color on hover */
+  transform: scale(1.02); /* Slight scaling effect on hover */
+  outline: none; /* Remove default outline */
+}
+
+/* Focus effect for input */
+input[type="email"]:focus {
+  border-color: #ff6347; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+#emailButton {
+  padding: 0.8rem 1.5rem;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem;
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for button */
+#emailButton:hover {
+  background-color: darkred; /* Change background color on hover */
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 4px 10px rgba(255, 110, 110, 0.6); /* Enhanced shadow */
+}
+
+@media (max-width: 768px) {
+  #EmailContact {
+    font-size: 1rem; /* Smaller font size on mobile */
+  }
+
+  input[type="email"] {
+    width: 90%; /* Full width on smaller screens */
+    max-width: none; /* Remove max-width on mobile */
+  }
+
+  #emailButton {
+    width: 40%; /* Full width button on smaller screens */
+    max-width: none; /* Remove max-width on mobile */
+  }
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Move up for entrance effect */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* Slide in from left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/*5th division (Footer)*/
+footer {
+  background-color: rgb(2, 2, 2);
+  color: #ccc; /* Softer grey for text */
+  padding: 50px 0;
+  font-size: 0.95rem;
+  font-family: 'Bebas Neue';
+  border-top: 3px solid #e50914; /* Bold top border for visual separation */
+}
+
+footer a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  color: #e50914; /* Netflix-like red on hover */
+  transform: scale(1.1); /* Enlarge slightly for a standout effect */
+}
+
+footer a:before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #e50914;
+  transition: width 0.4s ease;
+}
+
+footer a:hover:before {
+  width: 100%; /* Underline effect on hover */
+}
+
+footer .footer-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: start;
+}
+
+footer table {
+  width: 100%;
+  border-spacing: 0 30px; /* Increased spacing for a cleaner layout */
+}
+
+footer td {
+  padding: 15px;
+  font-weight: 600; /* Bolder text for better readability */
+}
+
+footer td a {
+  font-size: 1rem;
+}
+
+footer td a:hover {
+  text-shadow: 0 4px 10px rgba(229, 9, 20, 0.7); /* Stunning hover shadow effect */
+}
+select {
+  background-color: #0a0a0a; /* Dark background for consistency */
+  color: #b3b3b3; /* Light grey text */
+  border: 2px solid #e50914; /* Red border to match Netflix-like theme */
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  width: 100%;
+  max-width: 300px; /* Set a width that looks balanced */
+  border-radius: 5px; /* Slight rounding for modern look */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+select:hover {
+  color: #e50914; /* Highlight text in red on hover */
+  border-color: #ffffff; /* Change border to white for more contrast */
+  background-color: #1c1c1c; /* Slightly lighter dark background on hover */
+}
+
+select:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.7); /* Glowing red box-shadow on focus */
+}
+
+option {
+  background-color: #0a0a0a; /* Keep background dark inside dropdown */
+  color: #b3b3b3; /* Text color in dropdown */
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+  /* sign up page in movies page*/
+
+  
+  #signUpLogin {
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    margin-top: 0px;
+    top: 0;
+    left: 0;
+    background-color: black;
+    font-family: 'Bebas Neue';
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  form {
+    width: 18rem;
+    padding: 30px;
+    background-color: #1c1c1c;
+    border-radius: 0.6rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  form:hover {
+    transform: scale(1.06);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+  }
+  
+  h3 {
+    text-align: end;
+    margin-top: 0;
+    font-size: 2rem;
+    letter-spacing: 0.15rem;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .Inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 1.2rem;
+    animation: slideIn 0.7s ease-in-out;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .Inputs input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 0.6rem;
+    border: none;
+    border-radius: 0.4rem;
+    background-color: #333;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .Inputs input:focus {
+    background-color: #555;
+    outline: none;
+    transform: scale(1.03);
+  }
+  
+  .Inputs label {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  div > label span {
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  div > label span:hover {
+    color: #f00;
+  }
+  
+  /* Checkbox section styling */
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    appearance: none;
+    background-color: #333;
+    border: 2px solid white;
+    border-radius: 4px;
+    position: relative;
+    top:5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #f00;
+    transform: scale(1.1);
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top:2px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    opacity: 1;
+  }
+  
+  div {
+    margin-top: 1.5rem;
+  }
+  
+  form > div > label:first-of-type {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  #signUpButton {
+    font-family: 'Bebas Neue';
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #18181a;
+    color: #18181a;
+    display: inline-block;
+    font-size: 1.4rem;
+    line-height: 15px;
+    padding: 18px 18px 17px;
+    width: 250px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+   }
+   
+   #signUpButton span:first-child {
+    position: relative;
+    transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 10;
+   }
+   
+   #signUpButton span:last-child {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 100;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateY(225%) translateX(-50%);
+    height: 14px;
+    line-height: 13px;
+   }
+   
+   #signUpButton:after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform-origin: bottom center;
+    transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    transform: skewY(9.3deg) scaleY(0);
+    z-index: 50;
+   }
+   
+   #signUpButton:hover:after {
+    transform-origin: bottom center;
+    transform: skewY(9.3deg) scaleY(2);
+   }
+   
+   #signUpButton:hover span:last-child {
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+    transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+   }
+  
+  
+  
+   
+  
+  #loginButton {
+    font-family: 'Bebas Neue';
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #18181a;
+    color: #18181a;
+    display: inline-block;
+    font-size: 1.4rem;
+    line-height: 15px;
+    padding: 18px 18px 17px;
+    width: 250px;
+    text-decoration: none;
+    cursor: pointer;
+    background: #fff;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+   }
+   
+   #loginButton span:first-child {
+    position: relative;
+    transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 10;
+   }
+   
+   #loginButton span:last-child {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+    z-index: 100;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translateY(225%) translateX(-50%);
+    height: 14px;
+    line-height: 13px;
+   }
+   
+   #loginButton:after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform-origin: bottom center;
+    transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+    transform: skewY(9.3deg) scaleY(0);
+    z-index: 50;
+   }
+   
+   #loginButton:hover:after {
+    transform-origin: bottom center;
+    transform: skewY(9.3deg) scaleY(2);
+   }
+   
+   #loginButton:hover span:last-child {
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+    transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+   }
